@@ -34,7 +34,7 @@ public class ArraySortLab {
             boolean changed = false;
 
             for (int j = 0; j < newArr.length-1-i; j++) {
-                if (newArr[j] > newArr[j+1]) { // 옆의 값이 작으면 서로 바꾼다.
+                if (newArr[j] > newArr[j+1]) { // If the value next to it is small, switch it with each other.
                     int temp = newArr[j];
                     newArr[j] = newArr[j+1];
                     newArr[j+1] = temp;
