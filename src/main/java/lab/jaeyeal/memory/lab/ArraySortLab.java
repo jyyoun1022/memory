@@ -25,11 +25,12 @@ public class ArraySortLab {
 
         // How not to import an java.util.Array
         int[] newArr = new int[10];
-
+        int changeCnt = 0;
         for (int i = 0; i < newArr.length; i++) {
             newArr[i] = (int)(Math.random()* 10);
         }
-        for (int i = 0; i < arr.length; i++) {
+
+        for (int i = 0; i < newArr.length-1; i++) {
             // Check if there is a change of seats
             boolean changed = false;
 
@@ -39,10 +40,12 @@ public class ArraySortLab {
                     newArr[j] = newArr[j+1];
                     newArr[j+1] = temp;
                     changed = true;
+                    changeCnt++;
                 }
             }
             if(!changed) break;
         }
+        System.out.println("changeCnt = " + changeCnt);
         System.out.println(Arrays.toString(newArr));
     }
 }
