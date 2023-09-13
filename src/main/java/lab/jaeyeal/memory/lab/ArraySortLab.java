@@ -7,18 +7,42 @@ public class ArraySortLab {
     public static void main(String[] args) {
         Integer[] arr = {5, 2, 9, 3, 6};
 
-        // 배열을 오름차순으로 정렬
+        // Sort arrays in ascending order
         Arrays.sort(arr);
         for (int num : arr) {
-            // 정렬된 배열 출력
+            // Array Output Sorted in ascending order
             System.out.print(num);
         }
         System.out.println();
-        // 배열을 내림차순으로 정렬
+        // Sort arrays in descending order
         Arrays.sort(arr, Collections.reverseOrder());
         for (int num : arr) {
-            //내림차순으로 정렬된 배열 출력
+            // Array output sorted in descending order
             System.out.print(num);
         }
+
+        System.out.println();
+
+        // How not to import an java.util.Array
+        int[] newArr = new int[10];
+
+        for (int i = 0; i < newArr.length; i++) {
+            newArr[i] = (int)(Math.random()* 10);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            // Check if there is a change of seats
+            boolean changed = false;
+
+            for (int j = 0; j < newArr.length-1-i; j++) {
+                if (newArr[j] > newArr[j+1]) { // 옆의 값이 작으면 서로 바꾼다.
+                    int temp = newArr[j];
+                    newArr[j] = newArr[j+1];
+                    newArr[j+1] = temp;
+                    changed = true;
+                }
+            }
+            if(!changed) break;
+        }
+        System.out.println(Arrays.toString(newArr));
     }
 }
