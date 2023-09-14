@@ -1,4 +1,4 @@
-package lab.jaeyeal.memory.lab;
+package lab.jaeyeal.memory.algoritm;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
