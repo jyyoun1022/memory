@@ -32,7 +32,6 @@ import lombok.extern.slf4j.Slf4j;
     public class JwtTokenHelper {
         private final int          ACCESS_EXPIRATION_TIME  = 7 * (24 * 60 * 60 * 1000);                                     // 7 days
         private final int          REFRESH_EXPIRATION_TIME = 7 * (24 * 60 * 60 * 1000);                                     // 7 days
-        private final String       ENCRYPT_STRING          = "AIStudio";
         private byte[]             encryptKey              = DatatypeConverter.parseBase64Binary(ENCRYPT_STRING);
         private SignatureAlgorithm signatureAlgorithm      = SignatureAlgorithm.HS256;
         private final Key KEY                     = new SecretKeySpec(encryptKey, signatureAlgorithm.getJcaName());
