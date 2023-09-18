@@ -51,4 +51,5 @@ public class AbstractPagingRequestVo {
     private void calcPaging() {
         this.startRow = (this.pageIndex - 1) * this.pageSize;
     }
+
 }
