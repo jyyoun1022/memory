@@ -1,30 +1,30 @@
 package lab.jaeyeal.memory.concert;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
-@Aspect
+@Aspect // 더이상 POJO가 아니라 Aspect임을 명시.
 @Slf4j
 public class Audience {
 
-    @Before("execution(* lab.jaeyeal.memory.concert.Performance.perform(..))") // 공연 이전
+    @Pointcut("execution(* lab.jaeyeal.memory.concert.Performance.perform(..))")
+    public void performance() {};
+
+    @Before("performance()") // 공연 이전
     public void silenceCellPhone() {
         log.info("Silence CellPhones...");
     }
-    @Before("execution(* lab.jaeyeal.memory.concert.Performance.perform(..))") // 공연 이전
+    @Before("performance()") // 공연 이전
     public void taskSeats() {
         log.info("Taking seats");
     }
 
-    @AfterReturning("execution(* lab.jaeyeal.memory.concert.Performance.perform(..))") // 공연 후
+    @AfterReturning("performance()") // 공연 후
     public void applause() {
         log.info("CLAP !!! :: CLAP!!!");
     }
 
-    @AfterThrowing("execution(* lab.jaeyeal.memory.concert.Performance.perform(..))") // 공연 실패 후˚
+    @AfterThrowing("performance()") // 공연 실패 후˚
     public void demandRefund() {
         log.info("Demanding a refund");
     }
