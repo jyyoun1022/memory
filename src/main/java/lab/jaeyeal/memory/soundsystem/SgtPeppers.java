@@ -12,4 +12,9 @@ public class SgtPeppers implements CompactDisc{
     public void play() {
 
     }
+
+    @Override
+    public void playTrack(int trackNumber) {
+
+    }
 }
