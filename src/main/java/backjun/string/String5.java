@@ -14,9 +14,15 @@ public class String5 {
         String str = br.readLine();
 
         int count = Integer.valueOf(str);
+
+        String value = br.readLine();
+        br.close();
+
         int result = 0;
 
-
+        for (int i = 0; i < count; i++) {
+            result += value.charAt(i) - '0';
+        }
 
         System.out.println(result);
     }
