@@ -20,15 +20,11 @@ public class Node {
 
         // 홀수인 노드를 찾아 제거
         while (current != null) {
-            if (current.data % 2 != 0) {
-                // 홀수인 경우 해당 노드를 제거
-                if (prev == null) {
-                    head = current.next;
-                } else {
-                    prev.next
-                }
-            }
+            return null;
+
         }
+        return null;
+
     }
     public static void main(String[] args) {
     }
