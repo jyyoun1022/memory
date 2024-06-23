@@ -28,7 +28,6 @@ public class Step1 {
         for (int i = N.length() - 1; i >= 0; i--) {
             char ch = N.charAt(i);
             if (ch >= 'A' && ch <= 'Z') {
-                System.out.println((ch - 'A'));
                 answer += (ch - 'A' + 10) * temp;
             } else {
                 answer += (ch - '0') * temp;
